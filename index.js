@@ -79,39 +79,3 @@ function buttonAnimation(theKey) {
     }, 100);
 
 }
-
-// $(".drum").on("click", function () {
-
-//    theSounds(this.innerHTML);
-
-// });
-
-// $(document).on("keydown", function (event) {
-
-//     theSounds(event.key.toLowerCase());
-
-// });
-
-
-// var soundMap = {
-//     w: "sounds/tom-1.mp3",
-//     a: "sounds/tom-2.mp3",
-//     s: "sounds/tom-3.mp3",
-//     d: "sounds/tom-4.mp3",
-//     j: "sounds/kick-bass.mp3",
-//     k: "sounds/snare.mp3",
-//     l: "sounds/crash.mp3"
-// }
-
-// function theSounds(key) {
-
-//     if (soundMap[key]) {
-
-//         new Audio(soundMap[key]).play();
-
-//     }
-//     else {
-//         console.log(key);
-//     }
-
-// }
