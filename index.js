@@ -1,0 +1,117 @@
+var allDrum = document.querySelectorAll(".drum");
+
+for (var i = 0; i < allDrum.length; i++) {
+
+    allDrum[i].addEventListener("click", function() {
+
+        theSounds(this.textContent);
+
+        buttonAnimation(this.textContent);
+
+    });
+
+}
+
+document.addEventListener("keydown", function(event) {
+    
+    theSounds(event.key.toLowerCase());
+
+    buttonAnimation(event.key.toLowerCase());
+
+});
+
+
+
+function theSounds (key) {
+
+    switch (key) {
+
+        case "w" :
+            var tom1 = new Audio("sounds/tom-1.mp3");
+            tom1.play();
+                break;
+
+        case "a" :
+            var tom2 = new Audio("sounds/tom-2.mp3");
+            tom2.play();
+                break;
+
+        case "s" :
+            var tom3 = new Audio("sounds/tom-3.mp3");
+            tom3.play();
+                break;
+
+        case "d" :
+            var tom4 = new Audio("sounds/tom-4.mp3");
+            tom4.play();
+                break;
+
+        case "j" :
+            var kickSound = new Audio("sounds/kick-bass.mp3");
+            kickSound.play();
+                break;
+
+        case "k" :
+            var snareSound = new Audio("sounds/snare.mp3");
+            snareSound.play();
+                break;
+
+        case "l" :
+            var crashSound = new Audio("sounds/crash.mp3");
+            crashSound.play();
+                break;
+
+        default :
+            console.log(key);
+    }
+
+}
+
+
+function buttonAnimation(theKey) {
+
+    var pressButton = document.querySelector("." + theKey);
+    pressButton.classList.add("pressed");
+
+    setTimeout(function() {
+        pressButton.classList.remove("pressed");
+
+    }, 100);
+
+}
+
+// $(".drum").on("click", function () {
+
+//    theSounds(this.innerHTML);
+
+// });
+
+// $(document).on("keydown", function (event) {
+
+//     theSounds(event.key.toLowerCase());
+
+// });
+
+
+// var soundMap = {
+//     w: "sounds/tom-1.mp3",
+//     a: "sounds/tom-2.mp3",
+//     s: "sounds/tom-3.mp3",
+//     d: "sounds/tom-4.mp3",
+//     j: "sounds/kick-bass.mp3",
+//     k: "sounds/snare.mp3",
+//     l: "sounds/crash.mp3"
+// }
+
+// function theSounds(key) {
+
+//     if (soundMap[key]) {
+
+//         new Audio(soundMap[key]).play();
+
+//     }
+//     else {
+//         console.log(key);
+//     }
+
+// }
